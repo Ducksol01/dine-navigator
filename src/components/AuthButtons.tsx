@@ -11,7 +11,7 @@ import { Input } from "./ui/input";
 import { useState } from "react";
 
 export function AuthButtons() {
-  const { user, signIn, signUp, logout } = useAuth();
+  const { user, signIn, signUp, logout, signInWithGoogle } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
@@ -65,6 +65,14 @@ export function AuthButtons() {
           />
           <Button type="submit" className="w-full">
             {isSignUp ? "Sign Up" : "Sign In"}
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full"
+            onClick={signInWithGoogle}
+          >
+            Continue with Google
           </Button>
           <Button
             type="button"
