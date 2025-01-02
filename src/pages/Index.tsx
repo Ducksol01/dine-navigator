@@ -3,9 +3,9 @@ import { RestaurantCard } from "@/components/RestaurantCard";
 import { MenuItem } from "@/components/MenuItem";
 import { Cart } from "@/components/Cart";
 import { CartProvider } from "@/context/CartContext";
+import { AuthButtons } from "@/components/AuthButtons";
 
 const Index = () => {
-  // For demo purposes, we'll show the menu of the first restaurant
   const featuredRestaurant = restaurants[0];
 
   return (
@@ -14,7 +14,10 @@ const Index = () => {
         <header className="bg-white shadow-sm">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <h1 className="text-2xl font-bold text-primary">FoodieHub</h1>
-            <Cart />
+            <div className="flex items-center gap-4">
+              <AuthButtons />
+              <Cart />
+            </div>
           </div>
         </header>
 
