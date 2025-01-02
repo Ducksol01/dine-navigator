@@ -1,19 +1,22 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
+import { getAnalytics } from "firebase/analytics";
 
-// Initialize Firebase with your configuration
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  // Add this line for Realtime Database
-  databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com"
+  apiKey: "AIzaSyBcIxXB5R6JR9ZNuZoQxH9s9AdiTQhHWvA",
+  authDomain: "kooko-9c524.firebaseapp.com",
+  projectId: "kooko-9c524",
+  storageBucket: "kooko-9c524.firebasestorage.app",
+  messagingSenderId: "772909888799",
+  appId: "1:772909888799:web:c574f7b5878843b9346c2a",
+  measurementId: "G-97N50MK8GT",
+  // Add Realtime Database URL
+  databaseURL: "https://kooko-9c524-default-rtdb.asia-southeast1.firebasedatabase.app"
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const database = getDatabase(app);
+export const analytics = getAnalytics(app);
