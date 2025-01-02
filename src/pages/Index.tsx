@@ -4,9 +4,23 @@ import { MenuItem } from "@/components/MenuItem";
 import { Cart } from "@/components/Cart";
 import { CartProvider } from "@/context/CartContext";
 import { AuthButtons } from "@/components/AuthButtons";
+import { useEffect } from "react";
+import { initializeDatabase } from "@/utils/initializeDatabase";
+import { toast } from "sonner";
 
 const Index = () => {
   const featuredRestaurant = restaurants[0];
+
+  useEffect(() => {
+    initializeDatabase()
+      .then(() => {
+        toast.success('Sample data loaded successfully');
+      })
+      .catch((error) => {
+        toast.error('Error loading sample data');
+        console.error('Error:', error);
+      });
+  }, []);
 
   return (
     <CartProvider>
