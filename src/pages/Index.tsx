@@ -1,3 +1,4 @@
+
 import { restaurants } from "@/data/restaurants";
 import { RestaurantCard } from "@/components/RestaurantCard";
 import { MenuItem } from "@/components/MenuItem";
@@ -71,7 +72,11 @@ const Index = () => {
             </h2>
             <div className="grid gap-4">
               {featuredRestaurant.menu.map((item) => (
-                <MenuItem key={item.id} item={item} />
+                <MenuItem 
+                  key={item.id} 
+                  item={item} 
+                  restaurantId={featuredRestaurant.id}
+                />
               ))}
             </div>
           </section>
