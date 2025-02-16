@@ -59,7 +59,7 @@ export default function Restaurant() {
             <h2 className="text-2xl font-bold mb-6">Menu</h2>
             <div className="grid gap-4">
               {restaurant.menu.map((item) => (
-                <MenuItem key={item.id} item={item} />
+                <MenuItem key={item.id} item={item} restaurantId={restaurant.id} />
               ))}
             </div>
           </section>

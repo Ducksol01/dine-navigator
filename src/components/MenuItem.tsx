@@ -3,11 +3,13 @@ import { MenuItem as MenuItemType } from "@/types/restaurant";
 import { Button } from "./ui/button";
 import { useCart } from "@/context/CartContext";
 import { Plus } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export function MenuItem({ item }: { item: MenuItemType }) {
+export function MenuItem({ item, restaurantId }: { 
+  item: MenuItemType;
+  restaurantId: string;
+}) {
   const { addItem } = useCart();
-  const { id: restaurantId } = useParams();
 
   return (
     <div className="flex gap-4 p-4 border rounded-lg hover:shadow-md transition-shadow animate-fade-in">
